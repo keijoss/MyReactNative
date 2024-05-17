@@ -1,10 +1,26 @@
- import React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, Text, Image, StyleSheet, ScrollView, SafeAreaView, Platform, StatusBar} from 'react-native';
+
+import Navbar from '../components/Navbar';
 
 export default function SkillsScreen() {
   return (
-    <View>
-      <Text>Skills Screen</Text>
-    </View>
+    <>
+      <ScrollView>
+        <SafeAreaView style={styles.AndroidSafeArea}>
+          <Text>Skills Screen</Text>
+        </SafeAreaView>
+      </ScrollView>
+      <Navbar/>
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  AndroidSafeArea: {
+    flex: 1,
+    backgroundColor: '#FFECFF',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    margin: 1,
+  },
+});

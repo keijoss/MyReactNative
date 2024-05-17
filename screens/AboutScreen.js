@@ -1,18 +1,33 @@
-import React from 'react';
-import { View, Text, SafeAreaView, Platform, StatusBar, ScrollView, Image} from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Platform,
+  StatusBar,
+  ScrollView,
+  Image,
+  StyleSheet,
+} from "react-native";
+
+import Navbar from "../components/Navbar";
 
 export default function AboutScreen() {
   return (
     <>
       <ScrollView>
-        <SafeAreaView styles={styles.AndroidSafeArea}>
+        <SafeAreaView style={styles.AndroidSafeArea}>
           <View style={styles.header}>
-            <Image source={require('../assets/images/ncf-logo.png')} />
+            <Image
+              source={require("../assets/images/ncf-logo.png")}
+              style={styles.headerImage}
+            />
             <Text style={styles.pageTitle}>About Me</Text>
-            <Text style={{fontSize: 12}}>Happy Anniversary!</Text>
+            <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
           </View>
         </SafeAreaView>
       </ScrollView>
+      <Navbar/>
     </>
   );
 }
@@ -20,7 +35,7 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: '#FFECFF',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     margin: 1,
   },
@@ -32,8 +47,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   headerImage: {
-    width: 100,
-    height: 100,
+    width: 30,
+    height: 30,
   },
   pageTitle: {
     fontFamily: "sans-serif",

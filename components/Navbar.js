@@ -1,59 +1,90 @@
-import { View, Text, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, View, Text, TouchableOpacity, Pressable, Image } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
-import { Ionicons, Entypo } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
-const Navbar = () => {
+export default function Navbar() {
+  const navigation = useNavigation();
 
-    const navigation = useNavigation();
+    return (
+          <View style={styles.footBar}>
+              <Pressable 
+              style={[styles.footBarItem]}
+              onPress={() => navigation.navigate("Home")}>
+                <Image style={{width: 30, height: 30}}
+                contentFit="contain"
+                source={require("../assets/images/home.png")}
+                />
+                <Text style={[styles.search, styles.searchTypo]}>Home</Text>
+              </Pressable>
+              
+              <Pressable
+              style={[styles.footBarItem]}
+              onPress={() => navigation.navigate("About")}
+              >
+                <Image  style={{width: 30, height: 30}}
+                  contentFit="cover"
+                  source={require("../assets/images/about.png")}
+                />
+              <Text style={[styles.upload, styles.searchTypo]}>About</Text>
+              </Pressable>
 
-  return (
-    <View style={styles.navbar}>
-        <View style={{flexDirection: 'row'}}>
-            <Pressable onPress={() => navigation.navigate("Home")}>
-                <View>
-                    <Entypo name="home" size={24} color="black" />
-                    <Text>Home</Text>
-                </View>
-            </Pressable>
-            <Pressable onPress={() => navigation.navigate("About")}>
-                <View>
-                    <Entypo name="home" size={24} color="black" />
-                    <Text>About</Text>
-                </View>
-            </Pressable>
-            <Pressable onPress={() => navigation.navigate("Education")}>
-                <View>
-                    <Entypo name="home" size={24} color="black" />
-                    <Text>Education</Text>
-                </View>
-            </Pressable>
-            <Pressable onPress={() => navigation.navigate("Skills")}>
-                <View>
-                    <Entypo name="home" size={24} color="black" />
-                    <Text>Skills</Text>
-                </View>
-            </Pressable>
-            <Pressable onPress={() => navigation.navigate("Contact")}>
-                <View>
-                    <Entypo name="home" size={24} color="black" />
-                    <Text>Contacts</Text>
-                </View>
-            </Pressable>
-        </View>
-    </View>
-  )
+              <Pressable
+              style={[styles.footBarItem]}
+              onPress={() => navigation.navigate("Education")}
+              >
+                <Image  style={{width: 30, height: 30}}
+                contentFit="cover"
+                source={require("../assets/images/education.png")}
+                />
+                <Text style={[styles.browse1, styles.searchTypo]}>Education</Text>
+              </Pressable>
+
+              <Pressable
+              style={[styles.footBarItem]}
+              onPress={() => navigation.navigate("Skills")}
+              >
+                <Image  style={{width: 30, height: 30}}
+                    contentFit="cover"
+                    source={require("../assets/images/skills.png")}
+                />
+                <Text style={[styles.profile, styles.profilePosition]}>Skills</Text>
+              </Pressable>
+
+              <Pressable
+              style={[styles.footBarItem]}
+              onPress={() => navigation.navigate("Contact")}
+              >
+                <Image  style={{width: 30, height: 30}}
+                    contentFit="cover"
+                    source={require("../assets/images/contacts.png")}
+                />
+                <Text style={[styles.profile, styles.profilePosition]}>Contacts</Text>
+              </Pressable>
+
+          </View>
+    )
+
 }
 
 const styles = StyleSheet.create({
-    navbar: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        position: 'relative',
-        padding: 10,
-        borderTopStartRadius: 30
-    },
-});
-
-export default Navbar;
+  item:{
+    flex:1
+  },
+  footBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'relative',
+    backgroundColor: 'white',
+    padding: 15,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+  },
+  footBarItem: {
+    flex: 1,
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  });
