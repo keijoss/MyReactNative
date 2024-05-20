@@ -20,7 +20,7 @@ const HomeScreen = () => {
 
             <View style={styles.Carousel}>
               <View style={styles.CarouselItems}>
-                <Image source={require('../assets/images/carousel1.jpg')} style={styles.CarouselImage} />
+                <Image source={require('../assets/images/carousel4.jpg')} style={styles.CarouselImage} />
               </View>
               <View style={styles.CarouselItems}>
                 <Image source={require('../assets/images/carousel2.jpg')} style={styles.CarouselImage} />
@@ -29,7 +29,7 @@ const HomeScreen = () => {
                 <Image source={require('../assets/images/carousel3.jpg')} style={styles.CarouselImage} />
               </View>
               <View style={styles.CarouselItems}>
-                <Image source={require('../assets/images/carousel4.jpg')} style={styles.CarouselImage} />
+                <Image source={require('../assets/images/carousel1.jpg')} style={styles.CarouselImage} />
               </View>
             </View>
           </View>
@@ -38,8 +38,8 @@ const HomeScreen = () => {
           <Text style={styles.pageTitle}>Mj Estepanie Palo</Text>
         </View>
         <View style={{marginTop: 0, alignItems: "center", justifyContent: "space-between", padding: 3}}>
-          <Text style={styles.pageSubTitle}>Hello! I am Mj a 3rd year student of Naga College Foundation </Text>
-          <Text style={styles.pageSubTitle}>Hello! I am Mj a 3rd year student of Naga College Foundation </Text>
+          <Text style={styles.pageSubTitle}>Hello! I am Mj, an aspiring Full Stack Developer and Cybersecurity analyst. </Text>
+          <Text style={styles.pageSubTitle}></Text>
           </View>
       </SafeAreaView>
     </ScrollView>
