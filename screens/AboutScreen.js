@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-
-
 View,
 Text,
 SafeAreaView,
@@ -14,7 +12,20 @@ TouchableOpacity,
 } from "react-native";
 import FlipCard from 'react-native-flip-card'; 
 import Navbar from "../components/Navbar";
-
+import { Ionicons } from '@expo/vector-icons';
+import {
+  useFonts,
+  Outfit_100Thin,
+  Outfit_200ExtraLight,
+  Outfit_300Light,
+  Outfit_400Regular,
+  Outfit_500Medium,
+  Outfit_600SemiBold,
+  Outfit_700Bold,
+  Outfit_800ExtraBold,
+  Outfit_900Black,
+} from '@expo-google-fonts/outfit';
+ 
 export default function AboutScreen() {
  
 const [isFlipped, setIsFlipped] = useState(false); 
@@ -22,18 +33,33 @@ const [isFlipped, setIsFlipped] = useState(false);
 const toggleFlip = () => { 
     setIsFlipped(!isFlipped); 
 }; 
+
+let [fontsLoaded] = useFonts({
+  Outfit_100Thin,
+  Outfit_200ExtraLight,
+  Outfit_300Light,
+  Outfit_400Regular,
+  Outfit_500Medium,
+  Outfit_600SemiBold,
+  Outfit_700Bold,
+  Outfit_800ExtraBold,
+  Outfit_900Black,
+});
+
 return (
   <>
     <ScrollView>
       <SafeAreaView style={styles.AndroidSafeArea}>
         <View style={styles.header}>
-          <Image
-            source={require("../assets/images/ncf-logo.png")}
-            style={styles.headerImage}
-          />
           <Text style={styles.pageTitle}>About Me</Text>
-          <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
         </View>
+
+        <View>
+          <Text>
+            3rd year CS Student | 
+          </Text>
+        </View>
+
         <ScrollView horizontal={true}>
           <View style={styles.Carousel}>
             <FlipCard 
@@ -56,6 +82,7 @@ return (
               {/* Back */} 
               <View style={styles.imageContainer}>
                 <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
+                <Ionicons name="logo-ionic" size={24} color="black" />
               </View> 
             </FlipCard> 
 
@@ -150,12 +177,8 @@ header: {
   justifyContent: "space-between",
   margin: 10,
 },
-headerImage: {
-  width: 30,
-  height: 30,
-},
 pageTitle: {
-  fontFamily: "sans-serif",
+  fontFamily: "Outfit_900Black",
   color: "black",
   fontSize: 30,
 },
