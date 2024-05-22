@@ -81,7 +81,7 @@ return (
 
               {/* Back */} 
               <View style={styles.imageContainer}>
-                <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
+                <Text style={{ fontSize: 12 }}>Happy!</Text>
                 <Ionicons name="logo-ionic" size={24} color="black" />
               </View> 
             </FlipCard> 
