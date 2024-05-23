@@ -27,12 +27,6 @@ import {
 } from '@expo-google-fonts/outfit';
  
 export default function AboutScreen() {
- 
-const [isFlipped, setIsFlipped] = useState(false); 
-
-const toggleFlip = () => { 
-    setIsFlipped(!isFlipped); 
-}; 
 
 let [fontsLoaded] = useFonts({
   Outfit_100Thin,
@@ -60,102 +54,7 @@ return (
           </Text>
         </View>
 
-        <ScrollView horizontal={true}>
-          <View style={styles.Carousel}>
-            <FlipCard 
-              style={[styles.CarouselItems, styles.shadow]} 
-              friction={6} 
-              perspective={500} 
-              flipHorizontal={true} 
-              flipVertical={false} 
-              flip={isFlipped} 
-              clickable={true} 
-            > 
-              {/* Front */} 
-              <View style={styles.imageContainer}>
-                <Image
-                  source={require('../assets/images/carousel4.jpg')}
-                  style={styles.CarouselImage}
-                />
-              </View> 
-
-              {/* Back */} 
-              <View style={styles.imageContainer}>
-                <Text style={{ fontSize: 12 }}>Happy!</Text>
-                <Ionicons name="logo-ionic" size={24} color="black" />
-              </View> 
-            </FlipCard> 
-
-            <FlipCard 
-              style={[styles.CarouselItems, styles.shadow]} 
-              friction={6} 
-              perspective={500} 
-              flipHorizontal={true} 
-              flipVertical={false} 
-              flip={isFlipped} 
-              clickable={true} 
-            > 
-              {/* Front */} 
-              <View style={styles.imageContainer}>
-                <Image
-                  source={require('../assets/images/carousel2.jpg')}
-                  style={styles.CarouselImage}
-                />
-              </View> 
-
-              {/* Back */} 
-              <View style={styles.imageContainer}>
-                <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
-              </View> 
-            </FlipCard> 
-
-            <FlipCard 
-              style={[styles.CarouselItems, styles.shadow]} 
-              friction={6} 
-              perspective={500} 
-              flipHorizontal={true} 
-              flipVertical={false} 
-              flip={isFlipped} 
-              clickable={true} 
-            > 
-              {/* Front */} 
-              <View style={styles.imageContainer}>
-                <Image
-                  source={require('../assets/images/carousel3.jpg')}
-                  style={styles.CarouselImage}
-                />
-              </View> 
-
-              {/* Back */} 
-              <View style={styles.imageContainer}>
-                <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
-              </View> 
-            </FlipCard> 
-
-            <FlipCard 
-              style={[styles.CarouselItems, styles.shadow]} 
-              friction={6} 
-              perspective={500} 
-              flipHorizontal={true} 
-              flipVertical={false} 
-              flip={isFlipped} 
-              clickable={true} 
-            > 
-              {/* Front */} 
-              <View style={styles.imageContainer}>
-                <Image
-                  source={require('../assets/images/carousel1.jpg')}
-                  style={styles.CarouselImage}
-                />
-              </View> 
-
-              {/* Back */} 
-              <View style={styles.imageContainer}>
-                <Text style={{ fontSize: 12 }}>Happy Anniversary!</Text>
-              </View> 
-            </FlipCard> 
-          </View>
-        </ScrollView>
+        
       </SafeAreaView>
     </ScrollView>
     <Navbar/>
@@ -178,9 +77,10 @@ header: {
   margin: 10,
 },
 pageTitle: {
-  fontFamily: "Outfit_900Black",
+  fontFamily: "Outfit_Black",
   color: "black",
   fontSize: 30,
+  fontWeight: "bold",
 },
 Carousel: {
   flexDirection: 'row',
